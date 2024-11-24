@@ -174,60 +174,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        QWERTY {
-            display-name = "qBase";
-            bindings = <
-&kp TAB    &kp Q           &kp W           &kp E               &kp R             &kp T        &kp Y    &kp U              &kp I                &kp O            &kp P                    &kp BACKSPACE
-&kp LSHFT  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F  &kp G        &kp H    &hm RIGHT_SHIFT J  &hm RIGHT_CONTROL K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMICOLON  &kp SQT
-&kp LCTRL  &kp Z           &kp X           &kp C               &kp V             &kp B        &kp N    &kp M              &kp COMMA            &kp DOT          &kp FSLH                 &kp RSHFT
-                                           &kp LGUI            &lt 1 ESCAPE      &kp SPACE    &kp RET  &lt 2 TAB          &kp LEFT_ALT
-            >;
-        };
-
-        qNAV {
-            display-name = "qNavNum";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
-            bindings = <
-&trans      &kp N1  &kp N2    &kp N3        &kp N4           &kp N5           &kp N6   &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans      &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
-                              &kp LGUI      &trans           &kp SPACE        &kp RET  &trans  &trans
-            >;
-        };
-
-        qSYM {
-            display-name = "qSymbols";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC              &kp BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBKT   &kp RBKT              &kp PIPE  &trans
-                                  &kp LGUI        &trans           &kp SPACE    &kp RET    &trans     &trans
-            >;
-        };
-
-        qADJ {
-            display-name = "qSystem";
-            bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &tog 4
-                                    &trans        &trans      &trans            &trans  &trans  &trans
-            >;
-        };
-
         WORKMAN {
             display-name = "wBase";
 
@@ -241,7 +187,7 @@
 &kp TAB    &kp Q           &kp D           &kp R               &kp W             &kp B        &kp J    &kp F              &kp U                &kp P            &kp SEMICOLON    &kp BACKSPACE
 &kp LSHFT  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_CONTROL H  &hm LEFT_SHIFT T  &kp G        &kp Y    &hm RIGHT_SHIFT N  &hm RIGHT_CONTROL E  &hm RIGHT_ALT O  &hm RIGHT_GUI I  &kp SQT
 &kp LCTRL  &kp Z           &kp X           &kp M               &kp C             &kp V        &kp K    &kp L              &kp COMMA            &kp DOT          &kp FSLH         &kp RSHFT
-                                           &kp LGUI            &lt 5 ESCAPE      &kp SPACE    &kp RET  &lt 6 TAB          &kp LEFT_ALT
+                                           &kp LGUI            &lt 1 ESCAPE      &kp SPACE    &kp RET  &lt 2 TAB          &kp LEFT_ALT
             >;
         };
 
@@ -280,13 +226,13 @@
         compatible = "zmk,conditional-layers";
 
         qL3 {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <0 0>;
+            then-layer = <0>;
         };
 
         wL3 {
-            if-layers = <5 6>;
-            then-layer = <7>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
