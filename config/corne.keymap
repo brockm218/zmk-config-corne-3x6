@@ -225,11 +225,6 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        qL3 {
-            if-layers = <0 0>;
-            then-layer = <0>;
-        };
-
         wL3 {
             if-layers = <1 2>;
             then-layer = <3>;
