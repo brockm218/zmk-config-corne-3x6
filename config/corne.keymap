@@ -68,18 +68,46 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "COPY";
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "PASTE";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&copy>;
             key-positions = <28 27>;
         };
 
         paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&paste>;
             key-positions = <26 27>;
         };
     };
